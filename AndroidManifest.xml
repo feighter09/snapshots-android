@@ -7,7 +7,8 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="18" />
-    
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -29,6 +30,10 @@
         <activity
             android:name="com.mhacksW14.snapshots.Snapcam"
             android:label="@string/title_activity_snapcam" >
+        </activity>
+        <activity
+            android:name="com.mhacksW14.snapshots.Picture"
+            android:label="@string/title_activity_picture" >
         </activity>
     </application>
 
