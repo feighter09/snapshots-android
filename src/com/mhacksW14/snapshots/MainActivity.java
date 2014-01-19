@@ -22,6 +22,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.hardware.Camera;
+import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
@@ -127,7 +129,6 @@ public class MainActivity extends ListActivity {
 					snap.setViewed(false);
 				}
 				snap.setPhoto(null);
-				  
 				snapsList.add(snap);
 			}
 		} catch(JSONException e) {
@@ -155,7 +156,7 @@ public class MainActivity extends ListActivity {
 			e.printStackTrace();
 		}
 		recorder.start();
-		
+
 		Snap snap = (Snap) intent.getSerializableExtra("snap");
 		Log.d("receiver", "Cell held down");
 		ImageView snapImage = (ImageView) findViewById(R.id.snapView);
@@ -169,10 +170,9 @@ public class MainActivity extends ListActivity {
 	    Log.d("receiver", "Cell released");
 	    ImageView snapImage = (ImageView) findViewById(R.id.snapView);
 	    snapImage.setVisibility(ImageView.INVISIBLE);
+	    
 	    recorder.stop();
 	    recorder.release();
-	    
-	    
 	  }
 	};
 	

@@ -49,10 +49,6 @@ public class SnapArrayAdapter extends ArrayAdapter<Snap> {
 			public boolean onTouch(View v, MotionEvent event) {
 				if ( event.getAction() == MotionEvent.ACTION_DOWN ) {
 					showPicture(index);
-					return true;
-				} else if ( event.getAction() == MotionEvent.ACTION_UP ) {
-					hidePicture();
-					return false;
 				}
 				return true;
 			}
@@ -66,11 +62,5 @@ public class SnapArrayAdapter extends ArrayAdapter<Snap> {
 		Intent intent = new Intent("snap-held");
 		intent.putExtra("snap", snap);
 		LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
-	}
-	
-	public void hidePicture() {
-		Intent intent = new Intent("snap-released");
-		LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
-	}
-	
+	}	
 }
