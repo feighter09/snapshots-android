@@ -4,12 +4,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity_" >
 
+    <ImageView
+        android:id="@+id/snapView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@android:id/list"
+        android:contentDescription="Image"
+        android:visibility="gone" >
+
+    </ImageView>
+    
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentLeft="true" >
 
     </ListView>
 

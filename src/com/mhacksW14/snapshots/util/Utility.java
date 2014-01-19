@@ -40,16 +40,9 @@ public class Utility {
 	    while (iter.hasNext()) {
 	        Map.Entry pairs = (Map.Entry)iter.next();
 	        String key = (String)pairs.getKey();
-	        Map m = (Map)pairs.getValue();
-	        JSONObject data = new JSONObject();
-	        Iterator iter2 = m.entrySet().iterator();
-	        
-	        while (iter2.hasNext()) {
-	            Map.Entry pairs2 = (Map.Entry)iter2.next();
-	            data.put((String)pairs2.getKey(), (String)pairs2.getValue());
-	        }
+	        String value = (String) pairs.getValue();
 
-	        holder.put(key, data);
+	        holder.put(key, value);
 	    }
 	    return holder;
 	}

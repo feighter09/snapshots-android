@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
+import android.provider.MediaStore;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.mhacksW14.snapshots.R;
@@ -48,7 +50,7 @@ public class SnapArrayAdapter extends ArrayAdapter<Snap> {
 				if ( event.getAction() == MotionEvent.ACTION_DOWN ) {
 					showPicture(index);
 				}
-				return false;
+				return true;
 			}
 		});
  
@@ -61,4 +63,5 @@ public class SnapArrayAdapter extends ArrayAdapter<Snap> {
 		intent.putExtra("snap", snap);
 		LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
 	}
+	
 }
