@@ -42,7 +42,6 @@ import com.mhacksW14.snapshots.util.Snap;
 import com.mhacksW14.snapshots.util.SnapArrayAdapter;
 
 
-@EActivity
 public class MainActivity extends ListActivity {
 
 //	String jsonString = "{'Snaps':[{'from': 'afeight9', 'sent_time': '1350921506492'}, {'from': 'afeight9', 'sent_time': '1350921506492'}]}";
@@ -76,7 +75,6 @@ public class MainActivity extends ListActivity {
 		});
     }
 
-    @Background
     public void getAllSnaps(String username, String password) {
     	String url = "http://snapchatshots.herokuapp.com/getall";
     	

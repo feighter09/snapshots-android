@@ -3,7 +3,6 @@ package com.mhacksW14.snapshots.util;
 import java.io.IOException;
 import java.util.List;
 
-
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;

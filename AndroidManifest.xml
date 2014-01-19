@@ -34,12 +34,11 @@
             android:label="@string/title_activity_picture" >
         </activity>
         <activity
-            android:name="com.mhacksW14.snapshots.CameraRecorder"
-            android:label="@string/title_activity_camera_recorder" >
+            android:name="com.mhacksW14.snapshots.LoginActivity"
+            android:label="@string/title_activity_login" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+              <action android:name="android.intent.action.MAIN" />
+              <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
