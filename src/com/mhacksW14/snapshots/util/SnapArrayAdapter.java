@@ -62,6 +62,5 @@ public class SnapArrayAdapter extends ArrayAdapter<Snap> {
 		Intent intent = new Intent("snap-held");
 		intent.putExtra("snap", snap);
 		LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
-	}
-	
+	}	
 }

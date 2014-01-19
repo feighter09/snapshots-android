@@ -6,6 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_snapcam">Snapcam</string>
     <string name="title_activity_picture">Picture</string>
+    <string name="title_activity_camera_recorder">CameraRecorderActivity</string>
     <string name="title_activity_login">LoginActivity</string>
 
 </resources>

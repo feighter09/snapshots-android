@@ -70,8 +70,6 @@ public class MainActivity extends ListActivity {
 				if ( event.getAction() == MotionEvent.ACTION_UP ) {
 					Intent intent = new Intent("snap-released");
 					LocalBroadcastManager.getInstance(getBaseContext()).sendBroadcast(intent);
-					
-					
 				}
 				return false;
 			}
@@ -143,28 +141,13 @@ public class MainActivity extends ListActivity {
     private BroadcastReceiver mCellHeldReceiver = new BroadcastReceiver() {
 	  @Override
 	  public void onReceive(Context context, Intent intent) {
-		Intent takeVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-		if (takeVideoIntent.resolveActivity(getPackageManager()) != null) {
-			startActivityForResult(takeVideoIntent, REQUEST_VIDEO_CAPTURE);
-		}
-		
 		recorder = new MediaRecorder();
-		
-		Camera camera = Camera.open(0);
-		camera.unlock();
-		recorder.setCamera( camera );
-		
 		recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-		recorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
-		recorder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_HIGH));
-		
 		recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
 		recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
 		recorder.setOutputFile("/sdcard/recordvideooutput.3gpp");
-		
 		try {
 			recorder.prepare();
-			recorder.start();
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -172,12 +155,13 @@ public class MainActivity extends ListActivity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		  
+		recorder.start();
+
 		Snap snap = (Snap) intent.getSerializableExtra("snap");
 		Log.d("receiver", "Cell held down");
 		ImageView snapImage = (ImageView) findViewById(R.id.snapView);
 		snapImage.setImageResource(R.drawable.images);
-		snapImage.setVisibility(ImageView.VISIBLE);
+		snapImage.setVisibility(ImageView.VISIBLE);  
 	  }
 	};
 	private BroadcastReceiver mCellReleasedReceiver = new BroadcastReceiver() {
@@ -188,6 +172,7 @@ public class MainActivity extends ListActivity {
 	    snapImage.setVisibility(ImageView.INVISIBLE);
 	    
 	    recorder.stop();
+	    recorder.release();
 	  }
 	};
 	
