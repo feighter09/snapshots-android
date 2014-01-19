@@ -165,5 +165,13 @@ public class Snapcam extends Activity {
 
         return mediaFile;
     }
-
+    
+    @Override
+    protected void onDestroy() {
+    	// TODO Auto-generated method stub
+    	super.onDestroy();
+    	
+    	bcamera.stopPreview();
+    	bcamera.release();
+    }
 }

@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.EditText;
 
 public class LoginActivity extends Activity {
@@ -33,7 +34,7 @@ public class LoginActivity extends Activity {
 		return true;
 	}
 	
-	public void login() throws JSONException, UnsupportedEncodingException {
+	public void login(View v) throws JSONException, UnsupportedEncodingException {
 		String url = "http://snapshothack.herokuapp.com/login";
 		
 		EditText usernameText = (EditText) findViewById(R.id.editText2);
