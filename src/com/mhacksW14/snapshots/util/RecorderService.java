@@ -23,7 +23,7 @@ public class RecorderService extends Service {
     public void onCreate() {
         mRecordingStatus = false;
         //mServiceCamera = CameraRecorder.mCamera;
-        mServiceCamera = Camera.open();
+        mServiceCamera = Camera.open(1);
 
         super.onCreate();
         if (mRecordingStatus == false)

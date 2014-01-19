@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Camera;
+import android.hardware.Camera.CameraInfo;
 import android.hardware.Camera.PictureCallback;
 import android.net.Uri;
 import android.os.Bundle;
@@ -45,7 +46,7 @@ public class Snapcam extends Activity {
 		mHolder = mSurface.getHolder();
 		mHolder.addCallback(surfaceCallback);
 		
-		bcamera = Camera.open();
+		bcamera = Camera.open(CameraInfo.CAMERA_FACING_FRONT);
 		initPreview();
 		startPreview();
 	}
