@@ -28,3 +28,5 @@ proguard/
 *.iws
 .idea/
 /.apt_generated
+/.apt_generated
+/.apt_generated

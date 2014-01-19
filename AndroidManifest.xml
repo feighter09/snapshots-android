@@ -23,11 +23,6 @@
         <activity
             android:name="com.mhacksW14.snapshots.MainActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.mhacksW14.snapshots.Snapcam"
@@ -36,6 +31,11 @@
         <activity
             android:name="com.mhacksW14.snapshots.Picture"
             android:label="@string/title_activity_picture" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
